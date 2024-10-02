@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes Grátis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #141414; /* Fundo preto */
+            color: #fff;
+            overflow: hidden; /* Impede a rolagem durante a animação */
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ffcc00;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 3px solid #ffcc00;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        nav {
+            margin: 20px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #ffcc00;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #e6b800; /* Cor mais clara ao passar o mouse */
+        }
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 1200px;
+        }
+        h2 {
+            color: #ffcc00;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .video-container {
+            margin-bottom: 20px;
+            display: inline-block;
+            width: 220px;
+            margin-right: 15px;
+            vertical-align: top;
+            background-color: rgba(255, 255, 255, 0.1); /* Fundo dos cards */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Contorno dos cards */
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s; /* Animações */
+        }
+        .video-container:hover {
+            transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+            box-shadow: 0 4px 20px rgba(255, 204, 0, 0.8); /* Sombra ao passar o mouse */
+        }
+        iframe {
+            width: 100%;
+            height: 130px;
+        }
+        h3 {
+            margin: 5px;
+            font-size: 16px;
+            text-align: center;
+        }
+        /* Estilos para a animação de boas-vindas */
+        #welcome {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Fica acima de tudo */
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        #welcome h1 {
+            color: #ffcc00;
+            font-size: 3em;
+            text-align: center;
+            animation: slideIn 1s forwards;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        /* Estilos para o modal */
+        #modal {
+            display: none; /* Escondido por padrão */
+            position: fixed;
+            z-index: 1000; /* Fica acima de tudo */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9); /* Fundo escuro */
+            justify-content: center;
+            align-items: center;
+        }
+        #modal-content {
+            background-color: #000; /* Fundo preto do modal */
+            border-radius: 10px;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.8); /* Sombra do modal */
+        }
+        #modal iframe {
+            width: 100%;
+            height: 400px; /* Altura do iframe do modal */
+            border: none; /* Remove borda do iframe */
+        }
+        #close-btn {
+            background-color: #ffcc00; /* Cor do botão */
+            color: #333;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: bold; /* Negrito no texto do botão */
+            transition: background-color 0.3s;
+        }
+        #close-btn:hover {
+            background-color: #e6b800; /* Cor mais clara ao passar o mouse */
+        }
+        /* Estilos para o rodapé */
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            color: #ffcc00;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Filmes Grátis</h1>
+</header>
+
+<nav>
+    <a href="#acao">Ação</a>
+    <a href="#religioso">Religioso</a>
+    <a href="#comedia">Comédia</a>
+</nav>
+
+<section id="acao">
+    <h2>Ação</h2>
+    <div class="video-container">
+        <h3>Filme 1</h3>
+        <iframe src="https://www.youtube.com/embed/Am_5hSOZoA0" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="video-container">
+        <h3>Filme 2</h3>
+        <iframe src="https://www.youtube.com/embed/34pMykYCmxM" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="video-container">
+        <h3>Filme 3</h3>
+        <iframe src="https://www.youtube.com/embed/P_ENIvZd-v4" frameborder="0" allowfullscreen></iframe>
+    </div>
+</section>
+
+<section id="religioso">
+    <h2>Religioso</h2>
+    <div class="video-container">
+        <h3>Filme 1</h3>
+        <iframe src="https://www.youtube.com/embed/33PP9cTTMgQ" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="video-container">
+        <h3>Filme 2</h3>
+        <iframe src="https://www.youtube.com/embed/Y0U0YURFpPE" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="video-container">
+        <h3>Filme 3</h3>
+        <iframe src="https://www.youtube.com/embed/htnOo7hpQ5k" frameborder="0" allowfullscreen></iframe>
+    </div>
+</section>
+
+<section id="comedia">
+    <h2>Comédia</h2>
+    <div class="video-container">
+        <h3>Filme 1</h3>
+        <iframe src="https://www.youtube.com/embed/6vgoNinWOrU" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="video-container">
+        <h3>Filme 2</h3>
+        <iframe src="https://www.youtube.com/embed/tf-0KcnGK-o" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="video-container">
+        <h3>Filme 3</h3>
+        <iframe src="https://www.youtube.com/embed/tf-0KcnGK-o" frameborder="0" allowfullscreen></iframe>
+    </div>
+</section>
+
+<!-- Animação de boas-vindas -->
+<div id="welcome">
+    <h1>Bem-vindo ao nosso site!</h1>
+</div>
+
+<!-- Modal -->
+<div id="modal">
+    <div id="modal-content">
+        <h2>Visite Nosso Site!</h2>
+        <iframe src="https://ck-web-oficial.netlify.app/" allowfullscreen></iframe>
+        <br>
+        <button id="close-btn">Fechar</button>
+    </div>
+</div>
+
+<!-- Rodapé -->
+<footer>
+    © 2024 Todos os direitos reservados.
+</footer>
+
+<script>
+    // Exibir a animação de boas-vindas e depois mostrar o modal
+    window.onload = function() {
+        setTimeout(function() {
+            document.getElementById('welcome').style.display = 'none'; // Oculta a animação
+            document.getElementById('modal').style.display = 'flex'; // Mostra o modal
+        }, 3000); // Tempo de exibição da animação (3 segundos)
+    };
+
+    // Fechar o modal
+    document.getElementById('close-btn').onclick = function() {
+        document.getElementById('modal').style.display = 'none';
+        document.body.style.overflow = 'auto'; // Permite rolagem após fechar o modal
+    };
+</script>
+
+</body>
+</html>
