@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jornal Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .main-content {
+            flex: 3;
+            margin-right: 20px;
+        }
+        .sidebar {
+            flex: 1;
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        article {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+        h2 {
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Jornal Online</h1>
+        <nav>
+            <a href="#home">Início</a>
+            <a href="#noticias">Notícias</a>
+            <a href="#esportes">Esportes</a>
+            <a href="#entretenimento">Entretenimento</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <article>
+                <h2>Últimas Notícias</h2>
+                <p>O mercado de tecnologia está em constante evolução, e esta semana trouxe inovações significativas. As grandes empresas de tecnologia revelaram suas novas estratégias em conferências internacionais, destacando a importância da inteligência artificial e do aprendizado de máquina. O CEO da TechCorp anunciou um novo software que promete otimizar a gestão empresarial, reduzindo custos e aumentando a eficiência operacional. Especialistas afirmam que a adoção dessas tecnologias é crucial para a competitividade no mercado atual.</p>
+                
+                <p>Além disso, a pandemia de COVID-19 ainda impacta a indústria, com muitas empresas adotando um modelo híbrido de trabalho. As empresas estão investindo em tecnologia para garantir que seus colaboradores possam trabalhar de forma remota com eficácia, garantindo a continuidade dos negócios.</p>
+                
+                <p>O que isso significa para o futuro? Espera-se que, nos próximos anos, a tecnologia continue a ser uma força motriz para mudanças nas práticas de trabalho e na economia global.</p>
+            </article>
+            <article>
+                <h2>Esportes em Destaque</h2>
+                <p>No mundo dos esportes, o Campeonato Nacional está aquecendo com jogos emocionantes. Na última rodada, o time da Cidade X venceu o time da Cidade Y por 3 a 2 em um jogo repleto de reviravoltas. A estrela do jogo, João Silva, marcou dois gols e deu uma assistência, consolidando sua posição como um dos principais jogadores da temporada.</p>
+                
+                <p>Os fãs aguardam ansiosos a próxima partida, onde o time da Cidade Z enfrenta o líder do campeonato. A rivalidade entre as equipes promete mais um jogo eletrizante, e os ingressos já estão esgotados.</p>
+                
+                <p>As autoridades também anunciaram novas medidas de segurança para os eventos esportivos, garantindo que todos possam desfrutar das partidas com tranquilidade. A liga está investindo em tecnologia para melhorar a experiência do espectador, incluindo transmissões ao vivo de alta qualidade e interatividade durante os jogos.</p>
+            </article>
+            <article>
+                <h2>Entretenimento e Cultura</h2>
+                <p>O calendário cultural da cidade está repleto de eventos emocionantes para este mês. O Festival de Música da Cidade, que acontece anualmente, trará artistas de renome nacional e local. Este ano, o evento contará com a participação de bandas populares e artistas solo que prometem agitar o público.</p>
+                
+                <p>Além disso, o Museu de Arte Moderna estará realizando exposições de artistas contemporâneos, com foco na diversidade cultural e na inclusão. Os visitantes poderão explorar novas formas de expressão artística e participar de workshops interativos.</p>
+                
+                <p>Os organizadores esperam que os eventos atraiam um grande público, contribuindo para a revitalização do setor cultural da cidade após um período desafiador devido à pandemia. A programação inclui atividades para todas as idades, desde apresentações musicais até atividades para crianças, tornando o festival uma experiência familiar imperdível.</p>
+            </article>
+        </div>
+        <aside class="sidebar">
+            <h3>Artigos em Destaque</h3>
+            <ul>
+                <li><a href="#">Artigo 1</a></li>
+                <li><a href="#">Artigo 2</a></li>
+                <li><a href="#">Artigo 3</a></li>
+                <li><a href="#">Artigo 4</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Jornal Online. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

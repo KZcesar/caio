@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jornal Online - Estilo UOL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            margin: 15px 0;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .main-content {
+            flex: 3;
+            margin-right: 20px;
+        }
+        .sidebar {
+            flex: 1;
+            background-color: #e2e2e2;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        article {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+        h2 {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Jornal Online</h1>
+        <nav>
+            <a href="#home">Início</a>
+            <a href="#noticias">Notícias</a>
+            <a href="#esportes">Esportes</a>
+            <a href="#cultura">Cultura</a>
+            <a href="#tecnologia">Tecnologia</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <article>
+                <h2>Novidades em Tecnologia</h2>
+                <p>A revolução digital continua a avançar com a introdução de novas ferramentas que transformam a forma como vivemos e trabalhamos. Recentemente, a empresa de software InovaTech lançou uma plataforma de colaboração em nuvem que permite que equipes de todo o mundo trabalhem juntas em tempo real. Essa inovação promete facilitar o trabalho remoto, oferecendo uma experiência integrada de videoconferência, compartilhamento de arquivos e gerenciamento de projetos.</p>
+                
+                <p>Especialistas acreditam que essa ferramenta pode ser um divisor de águas, especialmente para pequenas e médias empresas que buscam otimizar sua comunicação interna. A pandemia acelerou a transformação digital, e muitas empresas estão se adaptando a esse novo normal. A InovaTech está se posicionando como líder nesse mercado em crescimento, buscando conquistar uma base de clientes sólida.</p>
+                
+                <p>Além disso, as tendências de segurança cibernética continuam a ser uma preocupação primordial. Com o aumento do trabalho remoto, as empresas estão investindo em soluções robustas para proteger dados e sistemas contra ameaças cibernéticas.</p>
+            </article>
+            <article>
+                <h2>Eventos Culturais</h2>
+                <p>O calendário cultural da cidade está repleto de eventos emocionantes para este mês. O Festival de Música da Cidade, que acontece anualmente, trará artistas de renome nacional e local. Este ano, o evento contará com a participação de bandas populares e artistas solo que prometem agitar o público.</p>
+                
+                <p>Além disso, o Museu de Arte Moderna estará realizando exposições de artistas contemporâneos, com foco na diversidade cultural e na inclusão. Os visitantes poderão explorar novas formas de expressão artística e participar de workshops interativos.</p>
+                
+                <p>Os organizadores esperam que os eventos atraiam um grande público, contribuindo para a revitalização do setor cultural da cidade após um período desafiador devido à pandemia. A programação inclui atividades para todas as idades, desde apresentações musicais até atividades para crianças, tornando o festival uma experiência familiar imperdível.</p>
+            </article>
+            <article>
+                <h2>Opinião: O Futuro do Trabalho</h2>
+                <p>O futuro do trabalho está se moldando diante de nossos olhos. Com a adoção do trabalho remoto e híbrido, muitas empresas estão reavaliando suas políticas e práticas de gestão. O equilíbrio entre vida profissional e pessoal está se tornando uma prioridade para muitos colaboradores, o que leva as organizações a repensar como conduzem seus negócios.</p>
+                
+                <p>Além disso, a transformação digital está impulsionando a necessidade de novos conjuntos de habilidades. A capacitação e o aprendizado contínuo se tornaram essenciais para que os profissionais se mantenham relevantes no mercado de trabalho em rápida evolução.</p>
+                
+                <p>A adaptação a essas mudanças não é apenas uma necessidade, mas uma oportunidade para inovar e encontrar novos modelos de negócios que atendam às expectativas de um novo perfil de trabalhador.</p>
+            </article>
+        </div>
+        <aside class="sidebar">
+            <h3>Artigos em Destaque</h3>
+            <ul>
+                <li><a href="#">Artigo 1</a></li>
+                <li><a href="#">Artigo 2</a></li>
+                <li><a href="#">Artigo 3</a></li>
+                <li><a href="#">Artigo 4</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Jornal Online. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos - O Melhor do Gaming</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1c1c1c;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(to right, #ff5722, #ffc107);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            animation: fadeIn 1.5s;
+            font-size: 2.5em;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            animation: slideIn 1s;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .section {
+            flex: 1 1 200px; /* Reduzindo o tamanho dos cards */
+            margin: 15px;
+            background-color: #2a2a2a;
+            border-radius: 5px;
+            padding: 15px; /* Ajustando padding */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+
+        .section:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #ff5722;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        h2 {
+            color: #ffc107;
+            animation: popIn 0.5s;
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .game {
+            width: 120px; /* Diminuindo a largura das imagens */
+            height: 160px; /* Diminuindo a altura das imagens */
+            margin: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .game img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .game:hover img {
+            transform: scale(1.1);
+        }
+
+        .about {
+            background-color: #2a2a2a;
+            padding: 15px; /* Ajustando padding */
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            margin: 10px 0;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #000;
+        }
+
+        .contact-form button {
+            padding: 10px;
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #e64a19;
+        }
+
+        /* Estilos para o chat de comentários */
+        .chat-container {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            height: 200px;
+            overflow-y: auto;
+            background: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-input {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .chat-input button {
+            padding: 10px 15px;
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .chat-input button:hover {
+            background-color: #e64a19;
+        }
+
+        .comment {
+            border-bottom: 1px solid #eee;
+            padding: 5px 0;
+            color: black; /* Mensagens em preto */
+        }
+
+        .comment span {
+            font-weight: bold;
+            color: #ff5722;
+        }
+
+        .online-users {
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #ffc107;
+        }
+
+        /* Estilos para o vídeo ao vivo */
+        .video-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .ad-banner {
+            display: none;
+            background-color: #ffc107;
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 5px;
+            position: relative;
+            cursor: pointer; /* Mudando o cursor para indicar que é clicável */
+        }
+
+        /* Novo anúncio */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            position: relative;
+            text-align: center;
+            width: 300px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border: none;
+            background: none;
+            color: #ff5722;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Jogos - O Melhor do Gaming</h1>
+        <nav>
+            <a href="#noticias">Notícias</a>
+            <a href="#resenhas">Resenhas</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#sobre">Sobre Nós</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <div class="video-container">
+            <h2>Vídeo ao Vivo</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/85Jx_2IoJtw" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="section" id="noticias">
+            <h2>Últimas Notícias</h2>
+            <p>Os jogos da Steam e Xbox estão em alta! Confira os lançamentos mais aguardados do mês, incluindo novos títulos que prometem revolucionar o mundo dos games.</p>
+            <p>Não perca as promoções de outono que estão rolando, com descontos de até 70% em jogos selecionados. Fique por dentro das atualizações e patches que melhoram a experiência do jogador!</p>
+            <p>O evento anual de games, a E3, está de volta, trazendo novidades imperdíveis sobre os próximos lançamentos!</p>
+        </div>
+
+        <div class="section" id="resenhas">
+            <h2>Resenhas de Jogos</h2>
+            <p>Recentemente, testamos "The Last of Us Part II". A narrativa intensa e o desenvolvimento de personagens tornaram este jogo um dos melhores do ano. Veja nossa análise completa e descubra o que torna esse título tão especial!</p>
+            <p>Além disso, "Cyberpunk 2077" teve uma atualização significativa. Com novas missões e melhorias no desempenho, vale a pena conferir.</p>
+        </div>
+
+        <div class="section gallery" id="galeria">
+            <h2>Galeria de Jogos</h2>
+            <div class="game"><img src="https://via.placeholder.com/120x160" alt="Jogo 1"></div>
+            <div class="game"><img src="https://via.placeholder.com/120x160" alt="Jogo 2"></div>
+            <div class="game"><img src="https://via.placeholder.com/120x160" alt="Jogo 3"></div>
+            <div class="game"><img src="https://via.placeholder.com/120x160" alt="Jogo 4"></div>
+            <div class="game"><img src="https://via.placeholder.com/120x160" alt="Jogo 5"></div>
+        </div>
+
+        <div class="section about" id="sobre">
+            <h2>Sobre Nós</h2>
+            <p>Somos apaixonados por jogos e nossa missão é trazer as últimas novidades do mundo dos games, análises, dicas e muito mais para você! Nossa equipe está sempre em busca do que há de mais atual para oferecer aos nossos leitores.</p>
+        </div>
+
+        <div class="section" id="contato">
+            <h2>Contato</h2>
+            <div class="contact-form">
+                <input type="text" placeholder="Seu Nome" required>
+                <input type="email" placeholder="Seu E-mail" required>
+                <textarea rows="4" placeholder="Sua Mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </div>
+        </div>
+
+        <div class="section online-users">
+            <h2>Usuários Online</h2>
+            <div class="chat-container">
+                <div class="comment"><span>Usuário1:</span> Adorei o novo jogo que saiu!</div>
+                <div class="comment"><span>Usuário2:</span> Você viu as novidades da E3?</div>
+                <div class="comment"><span>Usuário3:</span> O evento de lançamento foi incrível!</div>
+                <div class="comment"><span>Usuário4:</span> Quais jogos você recomenda?</div>
+                <div class="comment"><span>Usuário5:</span> Estou ansioso para as promoções de outono!</div>
+            </div>
+
+            <div class="chat-input">
+                <input type="text" placeholder="Digite seu comentário...">
+                <button type="button">Enviar</button>
+            </div>
+        </div>
+
+        <div class="ad-banner" onclick="alert('Você clicou no anúncio!');">
+            Novo Anúncio Aqui!
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Jogos - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        // Código do modal para o novo anúncio
+        const modal = document.querySelector('.modal');
+        const adBanner = document.querySelector('.ad-banner');
+
+        adBanner.addEventListener('click', function() {
+            modal.style.display = 'flex';
+        });
+
+        document.querySelector('.close-btn').addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+    </script>
+
+    <div class="modal">
+        <div class="modal-content">
+            <button class="close-btn">&times;</button>
+            <h2>Modal de Anúncio</h2>
+            <p>Aqui está um anúncio especial! Não perca nossas promoções!</p>
+        </div>
+    </div>
+
+</body>
+</html>

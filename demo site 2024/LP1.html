@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Landing Page Chamativa</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff007f, #ffcc00);
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        header {
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        header h1 {
+            font-size: 3em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: zoomIn 1.5s ease-in-out;
+        }
+        nav {
+            margin-top: 20px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        button {
+            background-color: #ff007f;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        .pulse-button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #ffcc00;
+            color: white;
+            font-size: 1.2em;
+            border-radius: 30px;
+            animation: pulse 2s infinite;
+            cursor: pointer;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.7);
+            }
+            70% {
+                transform: scale(1.1);
+                box-shadow: 0 0 0 30px rgba(255, 204, 0, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 204, 0, 0);
+            }
+        }
+        #sobre, #servicos, #contato {
+            background-color: rgba(0, 0, 0, 0.7);
+            margin-top: 50px;
+            padding: 50px 20px;
+            color: white;
+        }
+        footer {
+            background-color: #ff007f;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        /* Estilização de Serviços */
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .service-card {
+            background-color: rgba(255, 204, 0, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+            transform: scale(1.1);
+        }
+        .service-card h3 {
+            font-size: 1.5em;
+            color: #ff007f;
+        }
+        .service-card p {
+            font-size: 1em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Transforme Sua Vida Agora!</h1>
+        <nav>
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Chegou a Hora de Dar o Próximo Passo</h2>
+        <p>Não perca tempo! Temos soluções personalizadas que vão te ajudar a alcançar seus objetivos.</p>
+        <div class="pulse-button">Saiba Mais</div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="sobre">
+        <h2>Sobre Nós</h2>
+        <p>Somos uma empresa dedicada a transformar a vida dos nossos clientes com soluções inovadoras. Nossa equipe está preparada para ajudar você a alcançar o sucesso.</p>
+    </section>
+
+    <!-- Seção Serviços -->
+    <section id="servicos">
+        <h2>Nossos Serviços</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <h3>Consultoria</h3>
+                <p>Oferecemos consultoria estratégica para seu negócio, ajudando você a crescer com soluções personalizadas.</p>
+            </div>
+            <div class="service-card">
+                <h3>Marketing Digital</h3>
+                <p>Alcance novos clientes com campanhas de marketing digital eficazes e direcionadas.</p>
+            </div>
+            <div class="service-card">
+                <h3>Desenvolvimento Web</h3>
+                <p>Construímos sites modernos e responsivos, otimizados para performance e conversão.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato">
+        <h2>Entre em Contato</h2>
+        <p>Tem alguma dúvida ou gostaria de trabalhar conosco? Entre em contato pelo email: <strong>contato@empresa.com</strong> ou ligue para (11) 1234-5678.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sua Empresa - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

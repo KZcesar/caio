@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Acesso aos Sites</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            text-align: center;
+            padding: 50px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .button {
+            background-color: #ff4081;
+            color: white;
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            flex: 1 0 45%; /* Cada botão ocupa 45% da largura do contêiner */
+            max-width: 250px; /* Largura máxima para os botões */
+        }
+        .button:hover {
+            background-color: #ff007f;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Acesso aos Modelos de Site</h1>
+    <p>Clique nos botões abaixo para acessar os sites:</p>
+
+    <div class="button-container">
+        <button class="button" onclick="window.location.href='LP1.html'">Landing Page 1</button>
+        <button class="button" onclick="window.location.href='LP2.html'">Landing Page 2</button>
+        
+        <button class="button" onclick="window.location.href='M1.html'">Minha Loja 1</button>
+        <button class="button" onclick="window.location.href='M2.html'">Minha Loja 2</button>
+        <button class="button" onclick="window.location.href='M3.html'">Minha Loja 3</button>
+        <button class="button" onclick="window.location.href='M4.html'">Minha Loja 4</button>
+
+        <button class="button" onclick="window.location.href='S1.html'">SITE 1</button>
+        <button class="button" onclick="window.location.href='S2.html'">SITE 2</button>
+
+        <button class="button" onclick="window.location.href='J1.html'">JORNAL 1</button>
+        <button class="button" onclick="window.location.href='J2.html'">JORNAL 2</button>
+
+
+    </div>
+
+</body>
+</html>

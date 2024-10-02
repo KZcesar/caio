@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Minha Loja - E-commerce Laranja</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff3e0;
+            scroll-behavior: smooth;
+        }
+        header {
+            background-color: #ff6600;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #ff8533;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .banner {
+            background-color: #ff944d;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+        .product {
+            background-color: #ffffff;
+            border: 1px solid #ff6600;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+        .product h3 {
+            color: #ff6600;
+        }
+        .product p {
+            color: #333;
+        }
+        .product button {
+            background-color: #ff8533;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .product button:hover {
+            background-color: #ff6600;
+        }
+        footer {
+            background-color: #ff6600;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        #sobre, #contato {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        #sobre {
+            background-color: #ffe6cc;
+        }
+        #contato {
+            background-color: #ffd1a3;
+        }
+        h2 {
+            color: #ff6600;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Minha Loja - E-commerce Laranja</h1>
+        <p>Encontre produtos incríveis aqui!</p>
+    </header>
+
+    <nav>
+        <a href="#produtos">Produtos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="banner">
+        <h1>Bem-vindo à nossa loja laranja!</h1>
+        <p>Ofertas exclusivas para você.</p>
+    </div>
+
+    <!-- Seção de Produtos -->
+    <section id="produtos" class="products">
+        <div class="product">
+            <img src="produto1.jpg" alt="Produto 1">
+            <h3>Produto 1</h3>
+            <p>R$ 199,99</p>
+            <button>Comprar</button>
+        </div>
+        <div class="product">
+            <img src="produto2.jpg" alt="Produto 2">
+            <h3>Produto 2</h3>
+            <p>R$ 299,99</p>
+            <button>Comprar</button>
+        </div>
+        <div class="product">
+            <img src="produto3.jpg" alt="Produto 3">
+            <h3>Produto 3</h3>
+            <p>R$ 399,99</p>
+            <button>Comprar</button>
+        </div>
+        <div class="product">
+            <img src="produto4.jpg" alt="Produto 4">
+            <h3>Produto 4</h3>
+            <p>R$ 499,99</p>
+            <button>Comprar</button>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="sobre">
+        <h2>Sobre Nós</h2>
+        <p>Somos uma loja focada em trazer o que há de melhor no mercado para você.</p>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Fale conosco: contato@minhaloja.com | (11) 1234-5678</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Minha Loja - Todos os direitos reservados</p>
+    </footer>
+
+</body>
+</html>

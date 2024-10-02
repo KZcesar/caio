@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Minha Loja - E-commerce Verde</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e6f2e6;
+            scroll-behavior: smooth;
+        }
+        header {
+            background-color: #006600;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #009900;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .banner {
+            background-color: #33cc33;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 30px;
+        }
+        .product {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .product:hover {
+            transform: translateY(-10px);
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+        .product h3 {
+            color: #006600;
+        }
+        .product p {
+            color: #333;
+        }
+        .product button {
+            background-color: #009900;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .product button:hover {
+            background-color: #006600;
+        }
+        footer {
+            background-color: #006600;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        #sobre, #contato {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        #sobre {
+            background-color: #ccffcc;
+        }
+        #contato {
+            background-color: #b3ffb3;
+        }
+        h2 {
+            color: #006600;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Minha Loja - E-commerce Verde</h1>
+        <p>Produtos sustentáveis e ecológicos.</p>
+    </header>
+
+    <nav>
+        <a href="#produtos">Produtos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="banner">
+        <h1>Bem-vindo à nossa loja verde!</h1>
+        <p>Ofertas especiais para quem se preocupa com o meio ambiente.</p>
+    </div>
+
+    <!-- Seção de Produtos -->
+    <section id="produtos" class="products">
+        <div class="product">
+            <img src="produto1.jpg" alt="Produto 1">
+            <h3>Produto 1</h3>
+            <p>R$ 199,99</p>
+            <button>Comprar</button>
+        </div>
+        <div class="product">
+            <img src="produto2.jpg" alt="Produto 2">
+            <h3>Produto 2</h3>
+            <p>R$ 299,99</p>
+            <button>Comprar</button>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="sobre">
+        <h2>Sobre Nós</h2>
+        <p>Nossa loja oferece produtos sustentáveis para um mundo melhor.</p>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Fale conosco: contato@minhaloja.com | (11) 1234-5678</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Minha Loja - Todos os direitos reservados</p>
+    </footer>
+
+</body>
+</html>
