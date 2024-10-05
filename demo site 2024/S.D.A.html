@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senhas de Atendimento</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            font-size: 18px; /* Ajuste de tamanho */
+            margin-bottom: 10px;
+        }
+        label {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+            display: block;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .senha-item {
+            margin-bottom: 10px; /* Menor espaço */
+            font-size: 14px;
+        }
+        .logo {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .logo img {
+            max-width: 100%; /* Garante que a logo esteja visível */
+            height: auto;
+        }
+        .direitos {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Gerar Senha de Atendimento</h2>
+        <form id="senhaForm">
+            <label for="nomeCliente">Nome do Cliente:</label>
+            <input type="text" id="nomeCliente" placeholder="Digite o nome do cliente" required>
+
+            <label for="motivoAtendimento">Motivo do Atendimento:</label>
+            <input type="text" id="motivoAtendimento" placeholder="Digite o motivo do atendimento" required>
+
+            <button type="button" onclick="gerarSenha()">Gerar Senha</button>
+        </form>
+
+       
+
+        <div id="listaSenhas"></div>
+
+        <button type="button" onclick="imprimirSenhas()">Imprimir Senhas</button>
+
+        <div class="direitos">
+            <p>Todos os direitos reservados a CK Web</p>
+        </div>
+    </div>
+
+    <script>
+        const senhas = [];
+
+        function gerarSenha() {
+            const nomeCliente = document.getElementById('nomeCliente').value;
+            const motivoAtendimento = document.getElementById('motivoAtendimento').value;
+
+            // Verifica se os campos estão preenchidos
+            if (nomeCliente === "" || motivoAtendimento === "") {
+                alert("Por favor, preencha todos os campos.");
+                return;
+            }
+
+            // Gera uma nova senha
+            const senha = Math.floor(Math.random() * 1000) + 1; // Senha aleatória entre 1 e 1000
+            senhas.push({ nomeCliente, senha, motivoAtendimento });
+
+            // Exibe as senhas na tela
+            exibirSenhas();
+            document.getElementById('senhaForm').reset(); // Limpa o formulário
+        }
+
+        function exibirSenhas() {
+            const listaSenhas = document.getElementById('listaSenhas');
+            listaSenhas.innerHTML = ""; // Limpa a lista
+
+            senhas.forEach((senha, index) => {
+                const divSenha = document.createElement('div');
+                divSenha.classList.add('senha-item');
+                divSenha.innerHTML = `
+                    <p>Senha ${index + 1}: ${senha.senha} - ${senha.nomeCliente} - Motivo: ${senha.motivoAtendimento}</p>
+                    <hr>
+                `;
+                listaSenhas.appendChild(divSenha);
+            });
+        }
+
+        function imprimirSenhas() {
+            let conteudo = '<h2>Senhas de Atendimento</h2>';
+
+            senhas.forEach((senha) => {
+                conteudo += `
+                    <p>Senha: ${senha.senha} - Cliente: ${senha.nomeCliente} - Motivo: ${senha.motivoAtendimento}</p>
+                `;
+            });
+
+            conteudo += '<div class="direitos"><p>Todos os direitos reservados a CK Web</p></div>'; // Adiciona direitos reservados
+
+            const janelaImpressao = window.open('', '_blank');
+            janelaImpressao.document.write(`
+                <html>
+                <head>
+                    <title>Impressão de Senhas</title>
+                    <style>
+                        body { font-family: 'Arial', sans-serif; padding: 20px; }
+                        h2 { text-align: center; font-size: 18px; }
+                        p { font-size: 16px; margin: 5px 0; }
+                        hr { margin-top: 10px; }
+                        .logo img { max-width: 100%; height: auto; }
+                        .direitos { text-align: center; font-size: 12px; color: #777; margin-top: 10px; }
+                    </style>
+                </head>
+                <body>
+                    ${conteudo}
+                    <div class="logo">
+                        <img src="sua_logo_aqui.png" alt="Logo">
+                    </div>
+                </body>
+                </html>
+            `);
+
+            janelaImpressao.document.close();
+            janelaImpressao.focus();
+            janelaImpressao.print();
+            janelaImpressao.close();
+        }
+    </script>
+
+</body>
+</html>
