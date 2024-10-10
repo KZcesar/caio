@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comanda Digital</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex-grow: 1;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button.remove {
+            background-color: red;
+        }
+        .hidden {
+            display: none;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #ddd;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Comanda Digital</h2>
+    <label for="nomeCliente">Nome do Cliente:</label>
+    <input type="text" id="nomeCliente" placeholder="Digite o nome do cliente">
+    
+    <label for="numeroMesa">Número da Mesa:</label>
+    <input type="number" id="numeroMesa" placeholder="Digite o número da mesa">
+    
+    <label for="pedidoCliente">Pedido do Cliente:</label>
+    <textarea id="pedidoCliente" rows="4" placeholder="Descreva o pedido"></textarea>
+    
+    <button onclick="salvarPedido()">Salvar Pedido</button>
+    <button class="remove hidden" id="removerPedido" onclick="removerPedido()">Remover Pedido</button>
+    <button onclick="imprimirPedido()">Imprimir Pedido</button>
+    
+    <div id="dadosPedido" class="hidden">
+        <h3>Resumo do Pedido:</h3>
+        <p id="resumoPedido"></p>
+    </div>
+</div>
+
+<footer>
+    Todos os direitos reservados a CK Web
+</footer>
+
+<script>
+    function salvarPedido() {
+        const nome = document.getElementById('nomeCliente').value;
+        const mesa = document.getElementById('numeroMesa').value;
+        const pedido = document.getElementById('pedidoCliente').value;
+
+        if (nome && mesa && pedido) {
+            const dadosPedido = {
+                nome: nome,
+                mesa: mesa,
+                pedido: pedido
+            };
+
+            // Salva os dados no localStorage
+            localStorage.setItem('comandaPedido', JSON.stringify(dadosPedido));
+
+            // Exibe os dados salvos
+            document.getElementById('resumoPedido').innerText = 
+                `Nome: ${nome}\nMesa: ${mesa}\nPedido: ${pedido}`;
+            document.getElementById('dadosPedido').classList.remove('hidden');
+            document.getElementById('removerPedido').classList.remove('hidden');
+        } else {
+            alert("Por favor, preencha todos os campos.");
+        }
+    }
+
+    function removerPedido() {
+        // Remove o pedido do localStorage
+        localStorage.removeItem('comandaPedido');
+
+        // Esconde o resumo e o botão de remover
+        document.getElementById('dadosPedido').classList.add('hidden');
+        document.getElementById('removerPedido').classList.add('hidden');
+        alert('Pedido removido com sucesso!');
+    }
+
+    function imprimirPedido() {
+        const conteudo = document.getElementById('resumoPedido').innerText;
+        if (conteudo) {
+            const janelaImpressao = window.open('', '', 'width=600,height=400');
+            janelaImpressao.document.write('<pre>' + conteudo + '</pre>');
+            janelaImpressao.document.close();
+            janelaImpressao.print();
+        } else {
+            alert('Nenhum pedido para imprimir.');
+        }
+    }
+
+    // Carrega os dados do pedido ao carregar a página, se houver
+    window.onload = function() {
+        const pedidoSalvo = localStorage.getItem('comandaPedido');
+        if (pedidoSalvo) {
+            const dados = JSON.parse(pedidoSalvo);
+            document.getElementById('nomeCliente').value = dados.nome;
+            document.getElementById('numeroMesa').value = dados.mesa;
+            document.getElementById('pedidoCliente').value = dados.pedido;
+
+            document.getElementById('resumoPedido').innerText = 
+                `Nome: ${dados.nome}\nMesa: ${dados.mesa}\nPedido: ${dados.pedido}`;
+            document.getElementById('dadosPedido').classList.remove('hidden');
+            document.getElementById('removerPedido').classList.remove('hidden');
+        }
+    };
+</script>
+
+
+<script>
+    function imprimirPedido() {
+        const conteudo = document.getElementById('resumoPedido').innerText;
+        if (conteudo) {
+            const janelaImpressao = window.open('', '', 'width=210,height=480');
+            janelaImpressao.document.write(`
+                <html>
+                <head>
+                    <style>
+                        @page {
+                            size: 48mm 210mm; /* Define o tamanho da página para 48mm de largura e 210mm de altura */
+                            margin: 0; /* Margens mínimas */
+                        }
+                        body {
+                            font-family: Arial, sans-serif;
+                            font-size: 12px;
+                            line-height: 1.4;
+                            margin: 4;
+                            padding: 0;
+                            width: 100%;
+                        }
+                        .icon {
+                            text-align: center;
+                            margin-bottom: 2px;
+                        }
+                        hr {
+                            margin-top: 20px;
+                            border: none;
+                            border-top: 1px solid black;
+                        }
+                        .footer {
+                            font-style: italic;
+                            text-align: center;
+                            margin-top: 10px;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="icon">
+                        🥤
+                    </div>
+                    <pre>${conteudo}</pre>
+                    <br>
+                    <br>
+                    <hr>
+                    <div class="footer">
+                        CK WEB
+                    
+                    </div>
+                </body>
+                </html>
+            `);
+            janelaImpressao.document.close();
+            janelaImpressao.focus();
+            janelaImpressao.print();
+            janelaImpressao.close();
+        } else {
+            alert('Nenhum pedido para imprimir.');
+        }
+    }
+</script>
+
+
+
+
+</body>
+</html>
